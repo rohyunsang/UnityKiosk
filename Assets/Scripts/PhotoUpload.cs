@@ -7,15 +7,14 @@ using System.IO;
 
 public class PhotoUpload : MonoBehaviour
 {
-    
     public void PhotoCaptureBtn(){
         Debug.Log("PhotoCaptureBtnTest");
         StartCoroutine(PhotoCapture());
     }
 
-     IEnumerator PhotoCapture()
+    IEnumerator PhotoCapture()
     {
-        string imagePath = @"file:///C:/Users/lionh/Desktop/customer_image.jpg";
+        string imagePath = @"file:///C:\Users\lionh\Documents\GitHub\UnityKiosk\Assets\Images\KakaoTalk_20230531_133515500.jpg";
         UnityWebRequest www = UnityWebRequestTexture.GetTexture(imagePath);
         yield return www.SendWebRequest();
 
