@@ -2,9 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Windows.WebCam;
 
-public class ImageCapture : MonoBehaviour
+public class WebCamOn : MonoBehaviour
 {
+    PhotoCapture photoCapture = null;
     public RawImage display;
     WebCamTexture camTexture;
     private int currentIndex = 0;
@@ -32,11 +34,9 @@ public class ImageCapture : MonoBehaviour
         camTexture = new WebCamTexture(device.name,728,1024,60);
         display.texture = camTexture;
         camTexture.Play();
+
+        
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    
 }
