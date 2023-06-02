@@ -28,7 +28,7 @@ public class PhotoUpload : MonoBehaviour
 
             // Add the image as a field to the form
             form.AddBinaryData("customer_image", imageBytes, "customer_image.jpg", "image/jpeg");
-            form.AddField("product","https://docs.google.com/uc?export=download&id=1Xd0rfpg_PE_hClGs7_mbvvPVEraG6sYf");
+            form.AddField("product","http://220.149.231.136:8051/images/detail_2471760_16838798338817_500_1685690633834.jpg");
 
             // Create a UnityWebRequest object to send the form data
             UnityWebRequest uploadRequest = UnityWebRequest.Post("http://220.149.231.136:8032/fit", form);

@@ -1651,6 +1651,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 155686619}
   m_CullTransparentMesh: 1
+--- !u!1 &156599435
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 156599437}
+  - component: {fileID: 156599436}
+  m_Layer: 0
+  m_Name: APITestEmpty
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &156599436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156599435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54f47b79e1ddfca47adfd8caab485a11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  apiURL: http://220.149.231.136:8051/api/clothes
+--- !u!4 &156599437
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156599435}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &163995465
 GameObject:
   m_ObjectHideFlags: 0
@@ -5148,7 +5193,7 @@ RectTransform:
   m_Children:
   - {fileID: 1870088013}
   m_Father: {fileID: 773733609}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
@@ -6279,7 +6324,6 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
-  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -6353,18 +6397,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &519420033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 519420028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd4e819b0dca13e449066c17d30591bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &520011661
 GameObject:
   m_ObjectHideFlags: 0
@@ -9584,10 +9616,10 @@ RectTransform:
   m_Children:
   - {fileID: 363058092}
   - {fileID: 97959078}
-  - {fileID: 842014199}
   - {fileID: 460392213}
-  - {fileID: 1612063600}
   - {fileID: 1075838215}
+  - {fileID: 842014199}
+  - {fileID: 1612063600}
   m_Father: {fileID: 503142599}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10663,7 +10695,7 @@ RectTransform:
   m_Children:
   - {fileID: 806714507}
   m_Father: {fileID: 773733609}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -13135,6 +13167,7 @@ GameObject:
   - component: {fileID: 1075838218}
   - component: {fileID: 1075838217}
   - component: {fileID: 1075838216}
+  - component: {fileID: 1075838219}
   m_Layer: 5
   m_Name: ImageCaptureBtn
   m_TagString: Untagged
@@ -13156,7 +13189,7 @@ RectTransform:
   m_Children:
   - {fileID: 799584600}
   m_Father: {fileID: 773733609}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -13206,7 +13239,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1075838217}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1075838219}
+        m_TargetAssemblyTypeName: WebCamCapture, Assembly-CSharp
+        m_MethodName: WebCamCaptureButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1075838217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13245,6 +13290,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1075838214}
   m_CullTransparentMesh: 1
+--- !u!114 &1075838219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1075838214}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43a80d380ec52f049802f22e8e3903bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  webCamOn: {fileID: 0}
+  webcamTexture: {fileID: 0}
 --- !u!1 &1078784808
 GameObject:
   m_ObjectHideFlags: 0
@@ -18727,6 +18786,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1489857170}
   - component: {fileID: 1489857169}
+  - component: {fileID: 1489857171}
   m_Layer: 0
   m_Name: WebcamCaptureEmpty
   m_TagString: Untagged
@@ -18747,6 +18807,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   display: {fileID: 97959076}
+  camTexture: {fileID: 0}
 --- !u!4 &1489857170
 Transform:
   m_ObjectHideFlags: 0
@@ -18762,6 +18823,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1489857171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1489857168}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 43a80d380ec52f049802f22e8e3903bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  webCamOn: {fileID: 0}
+  webcamTexture: {fileID: 0}
 --- !u!1 &1493360871
 GameObject:
   m_ObjectHideFlags: 0
@@ -19704,7 +19779,7 @@ RectTransform:
   m_Children:
   - {fileID: 1074600588}
   m_Father: {fileID: 773733609}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

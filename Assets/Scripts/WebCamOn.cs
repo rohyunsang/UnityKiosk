@@ -6,9 +6,10 @@ using UnityEngine.Windows.WebCam;
 
 public class WebCamOn : MonoBehaviour
 {
-    PhotoCapture photoCapture = null;
     public RawImage display;
-    WebCamTexture camTexture;
+
+    [SerializeField]
+    public WebCamTexture camTexture;
     private int currentIndex = 0;
 
     // Start is called before the first frame update
@@ -34,9 +35,5 @@ public class WebCamOn : MonoBehaviour
         camTexture = new WebCamTexture(device.name,728,1024,60);
         display.texture = camTexture;
         camTexture.Play();
-
-        
     }
-
-    
 }
