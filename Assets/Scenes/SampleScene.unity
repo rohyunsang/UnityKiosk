@@ -1661,13 +1661,14 @@ GameObject:
   m_Component:
   - component: {fileID: 156599437}
   - component: {fileID: 156599436}
+  - component: {fileID: 156599438}
   m_Layer: 0
   m_Name: APITestEmpty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &156599436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1696,6 +1697,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &156599438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 156599435}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf82c83a80d83c64095066b5f1f00bfa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imageTexture: {fileID: 0}
 --- !u!1 &163995465
 GameObject:
   m_ObjectHideFlags: 0
@@ -5247,6 +5261,18 @@ MonoBehaviour:
       - m_Target: {fileID: 460392217}
         m_TargetAssemblyTypeName: PanelManager, Assembly-CSharp
         m_MethodName: OffVIrtualFittingPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1489857171}
+        m_TargetAssemblyTypeName: WebCam, Assembly-CSharp
+        m_MethodName: WebCamStopButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -13167,7 +13193,6 @@ GameObject:
   - component: {fileID: 1075838218}
   - component: {fileID: 1075838217}
   - component: {fileID: 1075838216}
-  - component: {fileID: 1075838219}
   m_Layer: 5
   m_Name: ImageCaptureBtn
   m_TagString: Untagged
@@ -13240,8 +13265,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1075838219}
-        m_TargetAssemblyTypeName: WebCamCapture, Assembly-CSharp
+      - m_Target: {fileID: 1489857171}
+        m_TargetAssemblyTypeName: WebCam, Assembly-CSharp
         m_MethodName: WebCamCaptureButton
         m_Mode: 1
         m_Arguments:
@@ -13290,20 +13315,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1075838214}
   m_CullTransparentMesh: 1
---- !u!114 &1075838219
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1075838214}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43a80d380ec52f049802f22e8e3903bb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  webCamOn: {fileID: 0}
-  webcamTexture: {fileID: 0}
 --- !u!1 &1078784808
 GameObject:
   m_ObjectHideFlags: 0
@@ -18785,29 +18796,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1489857170}
-  - component: {fileID: 1489857169}
   - component: {fileID: 1489857171}
   m_Layer: 0
-  m_Name: WebcamCaptureEmpty
+  m_Name: WebcamEmpty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1489857169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1489857168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84dff2244ec652747923cc7e3e32f3ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  display: {fileID: 97959076}
-  camTexture: {fileID: 0}
 --- !u!4 &1489857170
 Transform:
   m_ObjectHideFlags: 0
@@ -18832,11 +18828,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1489857168}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43a80d380ec52f049802f22e8e3903bb, type: 3}
+  m_Script: {fileID: 11500000, guid: 0c811ff03710dec4c956cca5438d6e93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  webCamOn: {fileID: 0}
-  webcamTexture: {fileID: 0}
+  display: {fileID: 97959076}
+  camTexture: {fileID: 0}
 --- !u!1 &1493360871
 GameObject:
   m_ObjectHideFlags: 0
@@ -24960,6 +24956,18 @@ MonoBehaviour:
       - m_Target: {fileID: 2018135965}
         m_TargetAssemblyTypeName: PanelManager, Assembly-CSharp
         m_MethodName: OnVirtualFittingPanel
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1489857171}
+        m_TargetAssemblyTypeName: WebCam, Assembly-CSharp
+        m_MethodName: WebCamPlayButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
