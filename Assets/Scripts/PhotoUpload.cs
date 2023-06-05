@@ -14,7 +14,8 @@ public class PhotoUpload : MonoBehaviour
 
     IEnumerator PhotoCapture()
     {
-        string imagePath = @"file:///C:\Users\lionh\Documents\GitHub\UnityKiosk\Assets\Images\KakaoTalk_20230531_133515500.jpg";
+        string imagePath = @"file:///C:\Users\lionh\Documents\GitHub\UnityKiosk\Assets\WebCamCapture\WebCamCapture.jpg";
+
         UnityWebRequest www = UnityWebRequestTexture.GetTexture(imagePath);
         yield return www.SendWebRequest();
 

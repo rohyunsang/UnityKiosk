@@ -1555,8 +1555,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoginPanel: {fileID: 0}
   VirtualFittingPanel: {fileID: 0}
+  VirtualFittingResultPanel: {fileID: 0}
   MaxmizeImagePanel: {fileID: 1797862745}
-  IntroAdvertisingPanel: {fileID: 0}
 --- !u!114 &155686622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1924,7 +1924,7 @@ GameObject:
   - component: {fileID: 175540196}
   - component: {fileID: 175540195}
   m_Layer: 5
-  m_Name: VitualFittingResultPanel
+  m_Name: VirtualFittingResultPanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2897,8 +2897,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoginPanel: {fileID: 2115421830}
   VirtualFittingPanel: {fileID: 773733608}
+  VirtualFittingResultPanel: {fileID: 0}
   MaxmizeImagePanel: {fileID: 0}
-  IntroAdvertisingPanel: {fileID: 0}
 --- !u!1 &242461028
 GameObject:
   m_ObjectHideFlags: 0
@@ -3034,8 +3034,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoginPanel: {fileID: 2115421830}
   VirtualFittingPanel: {fileID: 773733608}
+  VirtualFittingResultPanel: {fileID: 0}
   MaxmizeImagePanel: {fileID: 0}
-  IntroAdvertisingPanel: {fileID: 0}
 --- !u!114 &250395314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3571,7 +3571,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1551566249}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SearchPanel, Assembly-CSharp
         m_MethodName: OffSearchPanel
         m_Mode: 1
@@ -5334,8 +5334,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoginPanel: {fileID: 2115421830}
   VirtualFittingPanel: {fileID: 773733608}
+  VirtualFittingResultPanel: {fileID: 0}
   MaxmizeImagePanel: {fileID: 0}
-  IntroAdvertisingPanel: {fileID: 0}
 --- !u!1 &462643706
 GameObject:
   m_ObjectHideFlags: 0
@@ -5590,8 +5590,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoginPanel: {fileID: 2115421830}
   VirtualFittingPanel: {fileID: 773733608}
+  VirtualFittingResultPanel: {fileID: 0}
   MaxmizeImagePanel: {fileID: 0}
-  IntroAdvertisingPanel: {fileID: 0}
 --- !u!114 &477353438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5899,8 +5899,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoginPanel: {fileID: 2115421830}
   VirtualFittingPanel: {fileID: 773733608}
+  VirtualFittingResultPanel: {fileID: 0}
   MaxmizeImagePanel: {fileID: 0}
-  IntroAdvertisingPanel: {fileID: 0}
 --- !u!114 &495224876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6171,9 +6171,9 @@ RectTransform:
   - {fileID: 1428574043}
   - {fileID: 92027058}
   - {fileID: 1078784809}
-  - {fileID: 773733609}
   - {fileID: 2115421831}
   - {fileID: 1797862746}
+  - {fileID: 773733609}
   - {fileID: 175540194}
   m_Father: {fileID: 0}
   m_RootOrder: 4
@@ -6555,8 +6555,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoginPanel: {fileID: 2115421830}
   VirtualFittingPanel: {fileID: 773733608}
+  VirtualFittingResultPanel: {fileID: 0}
   MaxmizeImagePanel: {fileID: 0}
-  IntroAdvertisingPanel: {fileID: 0}
 --- !u!114 &522164685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7406,7 +7406,7 @@ RectTransform:
   - {fileID: 545401118}
   - {fileID: 272490254}
   m_Father: {fileID: 2076859613}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -9263,8 +9263,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoginPanel: {fileID: 0}
   VirtualFittingPanel: {fileID: 0}
+  VirtualFittingResultPanel: {fileID: 0}
   MaxmizeImagePanel: {fileID: 1797862745}
-  IntroAdvertisingPanel: {fileID: 0}
 --- !u!114 &739399506
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9647,7 +9647,7 @@ RectTransform:
   - {fileID: 842014199}
   - {fileID: 1612063600}
   m_Father: {fileID: 503142599}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -10362,7 +10362,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC774\uBBF8\uC9C0 \uCEA1\uCCD0\uD558\uAE30 \uC61B\uB0A0\uBC84\uC804"
+  m_Text: "\uC774\uBBF8\uC9C0 \uC5C5\uB85C\uB4DC\uD558\uAE30"
 --- !u!222 &806714509
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -11322,8 +11322,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoginPanel: {fileID: 0}
   VirtualFittingPanel: {fileID: 0}
+  VirtualFittingResultPanel: {fileID: 0}
   MaxmizeImagePanel: {fileID: 1797862745}
-  IntroAdvertisingPanel: {fileID: 0}
 --- !u!114 &878850566
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11473,8 +11473,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoginPanel: {fileID: 2115421830}
   VirtualFittingPanel: {fileID: 773733608}
+  VirtualFittingResultPanel: {fileID: 0}
   MaxmizeImagePanel: {fileID: 0}
-  IntroAdvertisingPanel: {fileID: 0}
 --- !u!114 &904847318
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11786,8 +11786,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoginPanel: {fileID: 2115421830}
   VirtualFittingPanel: {fileID: 773733608}
+  VirtualFittingResultPanel: {fileID: 0}
   MaxmizeImagePanel: {fileID: 0}
-  IntroAdvertisingPanel: {fileID: 0}
 --- !u!114 &948223393
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12299,8 +12299,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoginPanel: {fileID: 2115421830}
   VirtualFittingPanel: {fileID: 773733608}
+  VirtualFittingResultPanel: {fileID: 0}
   MaxmizeImagePanel: {fileID: 0}
-  IntroAdvertisingPanel: {fileID: 0}
 --- !u!114 &1008917488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12572,8 +12572,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoginPanel: {fileID: 2115421830}
   VirtualFittingPanel: {fileID: 773733608}
+  VirtualFittingResultPanel: {fileID: 0}
   MaxmizeImagePanel: {fileID: 0}
-  IntroAdvertisingPanel: {fileID: 0}
 --- !u!114 &1041781558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12668,6 +12668,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1041781555}
   m_CullTransparentMesh: 1
+--- !u!1 &1054705958
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1054705959}
+  - component: {fileID: 1054705960}
+  m_Layer: 0
+  m_Name: PortraitManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1054705959
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054705958}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 196.93588, y: 445.90292, z: 4.407994}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1054705960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1054705958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a431078c317c954c915920251d95769, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1065490578
 GameObject:
   m_ObjectHideFlags: 0
@@ -13179,8 +13223,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoginPanel: {fileID: 0}
   VirtualFittingPanel: {fileID: 0}
+  VirtualFittingResultPanel: {fileID: 0}
   MaxmizeImagePanel: {fileID: 0}
-  IntroAdvertisingPanel: {fileID: 1078784808}
 --- !u!1 &1075838214
 GameObject:
   m_ObjectHideFlags: 0
@@ -13923,8 +13967,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoginPanel: {fileID: 2115421830}
   VirtualFittingPanel: {fileID: 773733608}
+  VirtualFittingResultPanel: {fileID: 0}
   MaxmizeImagePanel: {fileID: 0}
-  IntroAdvertisingPanel: {fileID: 0}
 --- !u!114 &1132239823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14526,8 +14570,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoginPanel: {fileID: 2115421830}
   VirtualFittingPanel: {fileID: 773733608}
+  VirtualFittingResultPanel: {fileID: 0}
   MaxmizeImagePanel: {fileID: 0}
-  IntroAdvertisingPanel: {fileID: 0}
 --- !u!1 &1154790145
 GameObject:
   m_ObjectHideFlags: 0
@@ -14984,8 +15028,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoginPanel: {fileID: 0}
   VirtualFittingPanel: {fileID: 0}
+  VirtualFittingResultPanel: {fileID: 0}
   MaxmizeImagePanel: {fileID: 1797862745}
-  IntroAdvertisingPanel: {fileID: 0}
 --- !u!114 &1171220026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15154,7 +15198,7 @@ RectTransform:
   - {fileID: 1622478743}
   - {fileID: 1099901374}
   m_Father: {fileID: 2076859613}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -15456,8 +15500,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoginPanel: {fileID: 0}
   VirtualFittingPanel: {fileID: 0}
+  VirtualFittingResultPanel: {fileID: 0}
   MaxmizeImagePanel: {fileID: 1797862745}
-  IntroAdvertisingPanel: {fileID: 0}
 --- !u!114 &1230670830
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17279,8 +17323,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoginPanel: {fileID: 0}
   VirtualFittingPanel: {fileID: 0}
+  VirtualFittingResultPanel: {fileID: 0}
   MaxmizeImagePanel: {fileID: 1797862745}
-  IntroAdvertisingPanel: {fileID: 0}
 --- !u!114 &1380152466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17984,8 +18028,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoginPanel: {fileID: 2115421830}
   VirtualFittingPanel: {fileID: 773733608}
+  VirtualFittingResultPanel: {fileID: 0}
   MaxmizeImagePanel: {fileID: 0}
-  IntroAdvertisingPanel: {fileID: 0}
 --- !u!114 &1424528608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19111,57 +19155,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1542144792}
   m_CullTransparentMesh: 1
---- !u!1 &1551566248
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1551566250}
-  - component: {fileID: 1551566249}
-  m_Layer: 5
-  m_Name: PanelManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1551566249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1551566248}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d1909e2bf5279e140a193cf5b588bf5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mainPanel: {fileID: 1202018102}
-  searchPanel: {fileID: 573946052}
---- !u!224 &1551566250
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1551566248}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 2076859613}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1562593925
 GameObject:
   m_ObjectHideFlags: 0
@@ -19565,8 +19558,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoginPanel: {fileID: 2115421830}
   VirtualFittingPanel: {fileID: 773733608}
+  VirtualFittingResultPanel: {fileID: 0}
   MaxmizeImagePanel: {fileID: 0}
-  IntroAdvertisingPanel: {fileID: 0}
 --- !u!114 &1598477873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20132,7 +20125,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1551566249}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: SearchPanel, Assembly-CSharp
         m_MethodName: OnSearchPanel
         m_Mode: 1
@@ -20585,8 +20578,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoginPanel: {fileID: 2115421830}
   VirtualFittingPanel: {fileID: 773733608}
+  VirtualFittingResultPanel: {fileID: 0}
   MaxmizeImagePanel: {fileID: 0}
-  IntroAdvertisingPanel: {fileID: 0}
 --- !u!114 &1686658765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20957,8 +20950,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoginPanel: {fileID: 2115421830}
   VirtualFittingPanel: {fileID: 773733608}
+  VirtualFittingResultPanel: {fileID: 0}
   MaxmizeImagePanel: {fileID: 0}
-  IntroAdvertisingPanel: {fileID: 0}
 --- !u!114 &1698552710
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21188,8 +21181,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoginPanel: {fileID: 2115421830}
   VirtualFittingPanel: {fileID: 773733608}
+  VirtualFittingResultPanel: {fileID: 0}
   MaxmizeImagePanel: {fileID: 0}
-  IntroAdvertisingPanel: {fileID: 0}
 --- !u!114 &1707428074
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21634,7 +21627,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2076859613}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -22031,7 +22024,7 @@ RectTransform:
   - {fileID: 504500142}
   - {fileID: 1380152464}
   m_Father: {fileID: 503142599}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -22415,8 +22408,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoginPanel: {fileID: 0}
   VirtualFittingPanel: {fileID: 0}
+  VirtualFittingResultPanel: {fileID: 0}
   MaxmizeImagePanel: {fileID: 1797862745}
-  IntroAdvertisingPanel: {fileID: 0}
 --- !u!114 &1841321203
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -23665,8 +23658,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoginPanel: {fileID: 0}
   VirtualFittingPanel: {fileID: 0}
+  VirtualFittingResultPanel: {fileID: 0}
   MaxmizeImagePanel: {fileID: 1797862745}
-  IntroAdvertisingPanel: {fileID: 0}
 --- !u!114 &1918410051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24797,6 +24790,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2004510045}
+  - component: {fileID: 2004510046}
   m_Layer: 0
   m_Name: PanelManager
   m_TagString: Untagged
@@ -24811,7 +24805,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2004510044}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 196.93588, y: 445.90292, z: 4.407994}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -24819,6 +24813,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2004510046
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004510044}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e87804675be1ff54e96ac0b3130754f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LoginPanel: {fileID: 2115421830}
+  VirtualFittingPanel: {fileID: 773733608}
+  VirtualFittingResultPanel: {fileID: 175540193}
+  MaxmizeImagePanel: {fileID: 1797862745}
 --- !u!1 &2006351335
 GameObject:
   m_ObjectHideFlags: 0
@@ -25060,8 +25070,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoginPanel: {fileID: 2115421830}
   VirtualFittingPanel: {fileID: 773733608}
+  VirtualFittingResultPanel: {fileID: 0}
   MaxmizeImagePanel: {fileID: 0}
-  IntroAdvertisingPanel: {fileID: 0}
 --- !u!1 &2026906837
 GameObject:
   m_ObjectHideFlags: 0
@@ -25352,8 +25362,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LoginPanel: {fileID: 0}
   VirtualFittingPanel: {fileID: 0}
+  VirtualFittingResultPanel: {fileID: 0}
   MaxmizeImagePanel: {fileID: 1797862745}
-  IntroAdvertisingPanel: {fileID: 0}
 --- !u!114 &2049601701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25540,7 +25550,6 @@ GameObject:
   - component: {fileID: 2066214236}
   - component: {fileID: 2066214235}
   - component: {fileID: 2066214234}
-  - component: {fileID: 2066214237}
   m_Layer: 5
   m_Name: CloseBtn
   m_TagString: Untagged
@@ -25613,9 +25622,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2066214237}
-        m_TargetAssemblyTypeName: CloseVitualFittingPanel, Assembly-CSharp
-        m_MethodName: OffVitualFittingPanel
+      - m_Target: {fileID: 2004510046}
+        m_TargetAssemblyTypeName: PanelManager, Assembly-CSharp
+        m_MethodName: OffVIrtualFittingResultPanel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -25663,19 +25672,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2066214232}
   m_CullTransparentMesh: 1
---- !u!114 &2066214237
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2066214232}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70f19eb80ab74bc468c42e7de24d0494, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  VitualFittingPanel: {fileID: 175540193}
 --- !u!1 &2069201654
 GameObject:
   m_ObjectHideFlags: 0
@@ -25848,7 +25844,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1551566250}
   - {fileID: 1743496801}
   - {fileID: 1202018103}
   - {fileID: 573946053}
@@ -26443,7 +26438,7 @@ RectTransform:
   - {fileID: 99910274}
   - {fileID: 226725477}
   m_Father: {fileID: 503142599}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}

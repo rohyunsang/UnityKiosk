@@ -7,8 +7,10 @@ public class PanelManager : MonoBehaviour
 {
     public GameObject LoginPanel;
     public GameObject VirtualFittingPanel;
+    public GameObject VirtualFittingResultPanel;
     public GameObject MaxmizeImagePanel;
-    public GameObject IntroAdvertisingPanel;
+    //public GameObject IntroAdvertisingPanel;
+
     
     public void OnVirtualFittingPanel(){
         VirtualFittingPanel.SetActive(true);
@@ -25,10 +27,15 @@ public class PanelManager : MonoBehaviour
     public void OffMaxmizImagePanel(){
         MaxmizeImagePanel.SetActive(false);
     }
+
+    /*
     public void OffIntroAdvertisingPanel(){
         IntroAdvertisingPanel.SetActive(false);
     }
-    public void OffVitualFittingPanel(){
-        VirtualFittingPanel.SetActive(false);
-    }
+    */
+    
+
+    public void OffVIrtualFittingResultPanel(){
+        VirtualFittingResultPanel.SetActive(false);
+    } 
 }
