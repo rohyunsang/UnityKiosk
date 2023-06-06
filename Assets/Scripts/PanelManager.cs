@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+//
+
 public class PanelManager : MonoBehaviour
 {
     public GameObject LoginPanel;
@@ -10,7 +12,7 @@ public class PanelManager : MonoBehaviour
     public GameObject VirtualFittingResultPanel;
     public GameObject MaxmizeImagePanel;
     //public GameObject IntroAdvertisingPanel;
-
+    public GameObject SettingPanel;
     
     public void OnVirtualFittingPanel(){
         VirtualFittingPanel.SetActive(true);
@@ -18,6 +20,11 @@ public class PanelManager : MonoBehaviour
     public void OnMaxmizeImagePanel(){
         MaxmizeImagePanel.SetActive(true);
     }
+
+    public void OnSettingPanel(){
+        SettingPanel.SetActive(true);
+    }
+
     public void OffLoginPanel(){
         LoginPanel.SetActive(false);
     }
@@ -27,15 +34,16 @@ public class PanelManager : MonoBehaviour
     public void OffMaxmizImagePanel(){
         MaxmizeImagePanel.SetActive(false);
     }
-
     /*
     public void OffIntroAdvertisingPanel(){
         IntroAdvertisingPanel.SetActive(false);
     }
     */
-    
-
     public void OffVIrtualFittingResultPanel(){
         VirtualFittingResultPanel.SetActive(false);
     } 
+
+    public void OffSettingPanel(){
+        SettingPanel.SetActive(false);
+    }
 }

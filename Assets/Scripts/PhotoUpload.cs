@@ -8,6 +8,7 @@ using System.IO;
 public class PhotoUpload : MonoBehaviour
 {
     public WebCam webCam;
+    public GameObject uploadCompleteImage;
 
     void Start(){
         // another GameObject's field access 
@@ -41,7 +42,7 @@ public class PhotoUpload : MonoBehaviour
         {
             // Request successful
             Debug.Log("Image upload complete!");
-
+            uploadCompleteImage.SetActive(true);
             // Print the response text
             Debug.Log(uploadRequest.downloadHandler.text);
         }
