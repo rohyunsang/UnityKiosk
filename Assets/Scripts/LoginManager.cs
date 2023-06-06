@@ -15,8 +15,4 @@ public class LoginManager : MonoBehaviour
     void UserPW(){
         string PW = PWInputField.text;
     }
-    
-    
-
-
 }
