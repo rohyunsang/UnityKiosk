@@ -13,6 +13,8 @@ public class PanelManager : MonoBehaviour
     public GameObject MaxmizeImagePanel;
     //public GameObject IntroAdvertisingPanel;
     public GameObject SettingPanel;
+    public GameObject ShoppingBasketPanel;
+
     
     public void OnVirtualFittingPanel(){
         VirtualFittingPanel.SetActive(true);
@@ -23,6 +25,9 @@ public class PanelManager : MonoBehaviour
 
     public void OnSettingPanel(){
         SettingPanel.SetActive(true);
+    }
+    public void OnpShoppingBasketPanel(){
+        ShoppingBasketPanel.SetActive(true);
     }
 
     public void OffLoginPanel(){
@@ -45,5 +50,8 @@ public class PanelManager : MonoBehaviour
 
     public void OffSettingPanel(){
         SettingPanel.SetActive(false);
+    }
+    public void OffShoppingBasketPanel(){
+        ShoppingBasketPanel.SetActive(false);
     }
 }
