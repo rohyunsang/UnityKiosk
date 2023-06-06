@@ -12,6 +12,8 @@ public class WebCam : MonoBehaviour
     public WebCamTexture camTexture;
     private int currentIndex = 0;
 
+    public Texture2D snap;
+
     // Start is called before the first frame update
 
     void Start(){
@@ -41,15 +43,9 @@ public class WebCam : MonoBehaviour
 
     public void WebCamCaptureButton() // using button  
     {
-        Texture2D snap = new Texture2D(camTexture.width, camTexture.height, TextureFormat.RGBA32, false);
+        snap = new Texture2D(camTexture.width, camTexture.height, TextureFormat.RGBA32, false);
         snap.SetPixels(camTexture.GetPixels());
-        snap.Apply();
-
-        Debug.Log(Application.dataPath+"/WebCamCapture/" + " 경로에 사진이 저장된다.");
-        //webcamcapture 이름을 같게하여 제일 나중버젼 캡쳐 사진이 로컬에 저장된다.
-        System.IO.File.WriteAllBytes(Application.dataPath + "/WebCamCapture/" + "WebCamCapture" + ".jpg", snap.EncodeToJPG());
-        Debug.Log("WebCamCapture" + ".jpg 프로젝트 루트 폴더에 저장되었습니다.");
-        
+        snap.Apply();        
     }
 
     public void WebCamStopButton(){

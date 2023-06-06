@@ -7,55 +7,51 @@ using System.IO;
 
 public class PhotoUpload : MonoBehaviour
 {
-    public void PhotoCaptureBtn(){
+    public WebCam webCam;
+
+    void Start(){
+        // another GameObject's field access 
+        webCam = GameObject.Find("WebCamManager").GetComponent<WebCam>();
+    }
+
+    public void PhotoCaptureBtn()
+    {
         Debug.Log("PhotoCaptureBtnTest");
         StartCoroutine(PhotoCapture());
     }
 
     IEnumerator PhotoCapture()
     {
-        string imagePath = @"file:///C:\Users\lionh\Documents\GitHub\UnityKiosk\Assets\WebCamCapture\WebCamCapture.jpg";
+        byte[] imageBytes = webCam.snap.EncodeToJPG();
 
-        UnityWebRequest www = UnityWebRequestTexture.GetTexture(imagePath);
-        yield return www.SendWebRequest();
+        // Create a new form
+        WWWForm form = new WWWForm();
 
-        if (www.result == UnityWebRequest.Result.Success)
+        // Add the image as a field to the form
+        form.AddBinaryData("customer_image", imageBytes, "customer_image.jpg", "image/jpeg");
+        form.AddField("product", "http://220.149.231.136:8051/images/detail_2471760_16838798338817_500_1685690633834.jpg");
+
+        // Create a UnityWebRequest object to send the form data
+        UnityWebRequest uploadRequest = UnityWebRequest.Post("http://220.149.231.136:8032/fit", form);
+
+        // Send the request and wait for a response
+        yield return uploadRequest.SendWebRequest();
+
+        if (uploadRequest.result == UnityWebRequest.Result.Success)
         {
-            Texture2D texture = DownloadHandlerTexture.GetContent(www);
-            byte[] imageBytes = texture.EncodeToJPG();
+            // Request successful
+            Debug.Log("Image upload complete!");
 
-            // Create a new form
-            WWWForm form = new WWWForm();
-
-            // Add the image as a field to the form
-            form.AddBinaryData("customer_image", imageBytes, "customer_image.jpg", "image/jpeg");
-            form.AddField("product","http://220.149.231.136:8051/images/detail_2471760_16838798338817_500_1685690633834.jpg");
-
-            // Create a UnityWebRequest object to send the form data
-            UnityWebRequest uploadRequest = UnityWebRequest.Post("http://220.149.231.136:8032/fit", form);
-
-            // Send the request and wait for a response
-            yield return uploadRequest.SendWebRequest();
-
-            if (uploadRequest.result == UnityWebRequest.Result.Success)
-            {
-                // Request successful
-                Debug.Log("Image upload complete!");
-
-                // Print the response text
-                Debug.Log(uploadRequest.downloadHandler.text);
-            }
-            else
-            {
-                // Request failed
-                Debug.Log("Image upload failed: " + uploadRequest.error);
-            }
+            // Print the response text
+            Debug.Log(uploadRequest.downloadHandler.text);
         }
         else
         {
-            // Texture loading failed
-            Debug.Log("Texture loading failed: " + www.error);
+            // Request failed
+            Debug.Log("Image upload failed: " + uploadRequest.error);
         }
+
+        
     }
 }
 
