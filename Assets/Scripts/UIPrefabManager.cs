@@ -24,16 +24,15 @@ public class UIPrefabManager : MonoBehaviour
 
     public void PrefabInstantiate()
     {
-        
         float offSet = 0.0f;
-        for(int i = 0 ; i < 10; i+=2){
-            StartCoroutine(DelayedAPIDownload(i,offSet));
-            offSet+=0.5f;
+        for (int i = 0; i < 10; i += 2)
+        {
+            StartCoroutine(DelayedAPIDownload(i, offSet));
+            offSet += 0.5f;
         }
     }
     IEnumerator APIDownload(int idx)
-    {   
-        
+    {
         GameObject uiObject = Instantiate(uiPrefab, contentTransform);
 
         Transform leftImageTransform = uiObject.transform.Find("LeftImage");
@@ -44,10 +43,9 @@ public class UIPrefabManager : MonoBehaviour
             // Accessing the Image component of the LeftImage object
             leftImage = leftImageTransform.GetComponent<Image>();
             rightImage = rightImageTransform.GetComponent<Image>();
-
             if (leftImage != null && rightImage != null)
             {
-                for(int i = 0 ; i < 2; i++)
+                for (int i = 0; i < 2; i++)
                 {
                     string clothImageURL = "http://220.149.231.136:8051/" + clothesManager.clothes[idx].imgUrl;
                     Debug.Log("clothes[idx]+" + idx);
@@ -56,16 +54,66 @@ public class UIPrefabManager : MonoBehaviour
 
                     if (www.result == UnityWebRequest.Result.Success)
                     {
-                        //byte[] imageBytes = www.downloadHandler.data; // 다운로드한 이미지 데이터
                         Texture2D texture = DownloadHandlerTexture.GetContent(www);
 
                         // Create a sprite from the downloaded texture
                         Sprite sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), Vector2.one * 0.5f);
                         if (idx % 2 == 0)
+                        {
                             leftImage.sprite = sprite;
+
+                            Text[] textComponents = leftImageTransform.GetComponentsInChildren<Text>();
+
+                            Text leftNameText = null;
+                            Text leftPriceText = null;
+
+                            foreach (Text textComponent in textComponents)
+                            {
+                                if (textComponent.name == "NameText")
+                                {
+                                    leftNameText = textComponent;
+                                }
+                                else if (textComponent.name == "PriceText")
+                                {
+                                    leftPriceText = textComponent;
+                                }
+                            }
+
+                            if (leftNameText != null && leftPriceText != null)
+                            {
+                                // Access and modify the properties of NameText and PriceText
+                                leftNameText.text = clothesManager.clothes[idx].name;
+                                leftPriceText.text = clothesManager.clothes[idx].price.ToString();
+                            }
+                        }
                         else
+                        {
                             rightImage.sprite = sprite;
 
+                            Text[] textComponents = rightImageTransform.GetComponentsInChildren<Text>();
+
+                            Text leftNameText = null;
+                            Text leftPriceText = null;
+
+                            foreach (Text textComponent in textComponents)
+                            {
+                                if (textComponent.name == "NameText")
+                                {
+                                    leftNameText = textComponent;
+                                }
+                                else if (textComponent.name == "PriceText")
+                                {
+                                    leftPriceText = textComponent;
+                                }
+                            }
+
+                            if (leftNameText != null && leftPriceText != null)
+                            {
+                                // Access and modify the properties of NameText and PriceText
+                                leftNameText.text = clothesManager.clothes[idx].name;
+                                leftPriceText.text = clothesManager.clothes[idx].price.ToString();
+                            }
+                        }
                     }
                     else
                     {
@@ -75,7 +123,7 @@ public class UIPrefabManager : MonoBehaviour
                 }
             }
         }
-        
+
     }
 
     IEnumerator DelayedAPIDownload(int idx, float offSet)

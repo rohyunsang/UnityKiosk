@@ -5836,7 +5836,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   uiPrefab: {fileID: 6983175184510857209, guid: 04e9e118cae0e1c44b638347f9aca78d, type: 3}
   contentTransform: {fileID: 1871907458}
-  numberOfObjects: 20
   clothesManagerObject: {fileID: 0}
   clothesManager: {fileID: 0}
 --- !u!4 &405655534
@@ -25496,7 +25495,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -177.5, y: 0}
+  m_AnchoredPosition: {x: -177.5, y: 0.000030517578}
   m_SizeDelta: {x: 355, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1871907459
