@@ -19,6 +19,10 @@ public class WebCam : MonoBehaviour
     int threeSecond = 3;
     public GameObject countingImage;
 
+    // photo capture checking Image varable
+    public RawImage photoResult;
+    public GameObject PhotoResultPanel;
+
     // Start is called before the first frame update
 
     void Start(){
@@ -51,6 +55,9 @@ public class WebCam : MonoBehaviour
         snap = new Texture2D(camTexture.width, camTexture.height, TextureFormat.RGBA32, false);
         snap.SetPixels(camTexture.GetPixels());
         snap.Apply(); 
+
+        //PhotoResultPanel.SetActive(true);
+        //photoResult.texture = snap;
     }
     public void WebCamCaptureButton() // using button  
     {

@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 public class ClothesManager : MonoBehaviour
 {
+    public UIPrefabManager uIPrefabManager;
     int idx = 0;
     [System.Serializable]
     public class Cloth
@@ -25,6 +26,8 @@ public class ClothesManager : MonoBehaviour
 
     private void Start()
     {
+        GameObject uIPrefabManagerObject = GameObject.Find("UIPrefabManager");
+        uIPrefabManager = uIPrefabManagerObject.GetComponent<UIPrefabManager>();
         StartCoroutine(APIDownload());
     }
 
@@ -37,7 +40,8 @@ public class ClothesManager : MonoBehaviour
         {
             string jsonData = www.downloadHandler.text;
             ParseClothesData(jsonData);
-            // Assign the downloaded texture to the RawImage component
+            uIPrefabManager.PrefabInstantiate();
+            
         }
         else
         {
@@ -70,7 +74,7 @@ public class ClothesManager : MonoBehaviour
         // Iterate through the clothDataArray and parse each cloth data
         foreach (string clothData in clothDataArray)
         {
-            idx++;
+            idx++;  // last cloth object only got a '}' So make a branch
             // Remove unnecessary characters from the clothData
             if(idx<10){
                 Cloth cloth = JsonUtility.FromJson<Cloth>(clothData + "}");

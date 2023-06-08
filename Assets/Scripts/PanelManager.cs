@@ -14,29 +14,49 @@ public class PanelManager : MonoBehaviour
     //public GameObject IntroAdvertisingPanel;
     public GameObject SettingPanel;
     public GameObject ShoppingBasketPanel;
+    public GameObject PhotoResultPanel;
 
-    
-    public void OnVirtualFittingPanel(){
+    public void OnVirtualFittingPanel()
+    {
+        VirtualFittingPanel = GameObject.Find("VirtualFittingPanel");
         VirtualFittingPanel.SetActive(true);
     }
-    public void OnMaxmizeImagePanel(){
+    public void OnMaxmizeImagePanel()
+    {
         MaxmizeImagePanel.SetActive(true);
     }
 
-    public void OnSettingPanel(){
+    public void OnSettingPanel()
+    {
         SettingPanel.SetActive(true);
     }
-    public void OnpShoppingBasketPanel(){
+    public void OnpShoppingBasketPanel()
+    {
         ShoppingBasketPanel.SetActive(true);
     }
+    public void OnLoginPanel()
+    {
+        LoginPanel.SetActive(true);
+    }
+    public void OnPhotoResultPanel()
+    {
+        PhotoResultPanel.SetActive(true);
+    }
+    public void OffPhotoResultPanel()
+    {
+        PhotoResultPanel.SetActive(true);
+    }
 
-    public void OffLoginPanel(){
+    public void OffLoginPanel()
+    {
         LoginPanel.SetActive(false);
     }
-    public void OffVIrtualFittingPanel(){
+    public void OffVIrtualFittingPanel()
+    {
         VirtualFittingPanel.SetActive(false);
     }
-    public void OffMaxmizImagePanel(){
+    public void OffMaxmizImagePanel()
+    {
         MaxmizeImagePanel.SetActive(false);
     }
     /*
@@ -44,14 +64,17 @@ public class PanelManager : MonoBehaviour
         IntroAdvertisingPanel.SetActive(false);
     }
     */
-    public void OffVIrtualFittingResultPanel(){
+    public void OffVIrtualFittingResultPanel()
+    {
         VirtualFittingResultPanel.SetActive(false);
-    } 
+    }
 
-    public void OffSettingPanel(){
+    public void OffSettingPanel()
+    {
         SettingPanel.SetActive(false);
     }
-    public void OffShoppingBasketPanel(){
+    public void OffShoppingBasketPanel()
+    {
         ShoppingBasketPanel.SetActive(false);
     }
 }
