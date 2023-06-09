@@ -497,7 +497,7 @@ GameObject:
   - component: {fileID: 6983175183444051613}
   - component: {fileID: 444620205802590255}
   m_Layer: 5
-  m_Name: RightBtn
+  m_Name: AddCartBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -647,7 +647,7 @@ GameObject:
   - component: {fileID: 6983175183631372244}
   - component: {fileID: 2015439552925752542}
   m_Layer: 5
-  m_Name: RightBtn
+  m_Name: AddCartBtn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

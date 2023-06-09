@@ -16,6 +16,16 @@ public class PanelManager : MonoBehaviour
     public GameObject ShoppingBasketPanel;
     public GameObject PhotoResultPanel;
 
+    public Vector3 ShoppingBasketPanelOriginPosition;
+
+    public void UpShoppingBasketPanel(){
+        ShoppingBasketPanelOriginPosition = ShoppingBasketPanel.transform.position;
+        ShoppingBasketPanel.transform.position = new Vector3(0,2800,0);
+    }
+    public void DownShoppingBasketPanel(){
+        ShoppingBasketPanel.transform.position = ShoppingBasketPanelOriginPosition;
+    }
+
     public void OnVirtualFittingPanel()
     {
         VirtualFittingPanel = GameObject.Find("VirtualFittingPanel");
