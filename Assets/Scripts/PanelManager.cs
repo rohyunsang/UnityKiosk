@@ -30,7 +30,7 @@ public class PanelManager : MonoBehaviour
     {
         SettingPanel.SetActive(true);
     }
-    public void OnpShoppingBasketPanel()
+    public void OnShoppingBasketPanel()
     {
         ShoppingBasketPanel.SetActive(true);
     }

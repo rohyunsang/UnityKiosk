@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 6983175182561784257}
   - component: {fileID: 6983175182561784256}
   - component: {fileID: 3663193216525860008}
+  - component: {fileID: 7526544216654418552}
   m_Layer: 5
   m_Name: TryOnBtn
   m_TagString: Untagged
@@ -231,6 +232,21 @@ MonoBehaviour:
   panelManager: {fileID: 0}
   virtualPanel: {fileID: 0}
   webCamObject: {fileID: 0}
+--- !u!114 &7526544216654418552
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6983175182561784285}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a4f491d7cbe85749bbdce37845062ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothCopy: {fileID: 0}
+  contentTransform: {fileID: 0}
+  clothImage: {fileID: 6983175184405043757}
 --- !u!1 &6983175182575436667
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,6 +495,7 @@ GameObject:
   - component: {fileID: 6983175183444051615}
   - component: {fileID: 6983175183444051614}
   - component: {fileID: 6983175183444051613}
+  - component: {fileID: 444620205802590255}
   m_Layer: 5
   m_Name: RightBtn
   m_TagString: Untagged
@@ -588,7 +605,34 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6983175183444051614}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 444620205802590255}
+        m_TargetAssemblyTypeName: ShoppingBasketManager, Assembly-CSharp
+        m_MethodName: AddToShoppingBasketButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &444620205802590255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6983175183444051611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a4f491d7cbe85749bbdce37845062ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothCopy: {fileID: 0}
+  contentTransform: {fileID: 0}
+  clothImage: {fileID: 6983175184337853975}
 --- !u!1 &6983175183631372242
 GameObject:
   m_ObjectHideFlags: 0
@@ -601,6 +645,7 @@ GameObject:
   - component: {fileID: 6983175183631372246}
   - component: {fileID: 6983175183631372245}
   - component: {fileID: 6983175183631372244}
+  - component: {fileID: 2015439552925752542}
   m_Layer: 5
   m_Name: RightBtn
   m_TagString: Untagged
@@ -710,7 +755,34 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6983175183631372245}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2015439552925752542}
+        m_TargetAssemblyTypeName: ShoppingBasketManager, Assembly-CSharp
+        m_MethodName: AddToShoppingBasketButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2015439552925752542
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6983175183631372242}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a4f491d7cbe85749bbdce37845062ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clothCopy: {fileID: 0}
+  contentTransform: {fileID: 0}
+  clothImage: {fileID: 6983175184405043757}
 --- !u!1 &6983175183700297124
 GameObject:
   m_ObjectHideFlags: 0
