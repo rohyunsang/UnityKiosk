@@ -23,6 +23,8 @@ public class WebCam : MonoBehaviour
     public RawImage photoResult;
     public GameObject PhotoResultPanel;
 
+    public GameObject PhotoUpload;
+
     // Start is called before the first frame update
 
     void Start(){
@@ -79,5 +81,7 @@ public class WebCam : MonoBehaviour
 
     public void WebCamStopButton(){   // panel close fuc 
         camTexture.Stop();
+        threeSecond = 3;
+        countingImage.SetActive(false);
     }
 }

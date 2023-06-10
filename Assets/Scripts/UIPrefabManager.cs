@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.Networking;
 
 // make a prefab and Find fuction btn connect
-public class UIPrefabManager : MonoBehaviour
+public class UIPrefabManager : MonoBehaviour // Cloth Product PrefabManager
 {
     public GameObject uiPrefab; //UI prefab
     public Transform contentTransform;  // Parent Ojbect current => Content
@@ -26,7 +26,7 @@ public class UIPrefabManager : MonoBehaviour
         for (int i = 0; i < 10; i += 2)
         {
             StartCoroutine(DelayedAPIDownload(i, offSet));
-            offSet += 0.5f;
+            offSet += 0.8f;
         }
     }
     IEnumerator APIDownload(int idx)
@@ -49,6 +49,8 @@ public class UIPrefabManager : MonoBehaviour
                     leftImage.name = "LeftImage" + ((idx-1)/2).ToString();
                     rightImage.name = "RightImage" + ((idx-1)/2).ToString();
                     string clothImageURL = "http://220.149.231.136:8051/" + clothesManager.clothes[idx].imgUrl;
+                    
+
                     Debug.Log("clothes[idx]+" + idx);
                     UnityWebRequest www = UnityWebRequestTexture.GetTexture(clothImageURL);
                     yield return www.SendWebRequest();
@@ -61,6 +63,7 @@ public class UIPrefabManager : MonoBehaviour
                         Sprite sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), Vector2.one * 0.5f);
                         if (idx % 2 == 0)
                         {
+                            leftImageTransform.GetComponentInChildren<ImageURL>().imgUrl = "http://220.149.231.136:8051/" + clothesManager.clothes[idx].imgUrl;
                             leftImage.sprite = sprite;
 
                             Text[] textComponents = leftImageTransform.GetComponentsInChildren<Text>();
@@ -89,6 +92,7 @@ public class UIPrefabManager : MonoBehaviour
                         }
                         else
                         {
+                            rightImageTransform.GetComponentInChildren<ImageURL>().imgUrl = "http://220.149.231.136:8051/" + clothesManager.clothes[idx].imgUrl;
                             rightImage.sprite = sprite;
 
                             Text[] textComponents = rightImageTransform.GetComponentsInChildren<Text>();

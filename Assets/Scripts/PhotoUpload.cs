@@ -9,6 +9,7 @@ public class PhotoUpload : MonoBehaviour
 {
     public WebCam webCam;
     public GameObject uploadCompleteImage;
+    public string imgUrl;
 
     void Start(){
         // another GameObject's field access 
@@ -18,7 +19,7 @@ public class PhotoUpload : MonoBehaviour
     public void PhotoCaptureBtn()
     {
         Debug.Log("PhotoCaptureBtnTest");
-        StartCoroutine(PhotoCapture());
+        StartCoroutine(PhotoCapture()); //here
     }
 
     IEnumerator PhotoCapture()
@@ -30,7 +31,7 @@ public class PhotoUpload : MonoBehaviour
 
         // Add the image as a field to the form
         form.AddBinaryData("customer_image", imageBytes, "customer_image.jpg", "image/jpeg");
-        form.AddField("product", "http://220.149.231.136:8051/images/detail_2471760_16838798338817_500_1685690633834.jpg");
+        form.AddField("product", imgUrl);
 
         // Create a UnityWebRequest object to send the form data
         UnityWebRequest uploadRequest = UnityWebRequest.Post("http://220.149.231.136:8032/fit", form);

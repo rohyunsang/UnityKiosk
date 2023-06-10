@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
 
-public class PhotoDownload : MonoBehaviour
+public class PhotoDownload : MonoBehaviour //결과 이미지 다운로드
 {
     [SerializeField]
     public RawImage resultImage;

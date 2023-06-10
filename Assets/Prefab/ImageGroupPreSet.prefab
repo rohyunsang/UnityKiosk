@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 6983175182561784257}
   - component: {fileID: 6983175182561784256}
   - component: {fileID: 3663193216525860008}
-  - component: {fileID: 7526544216654418552}
+  - component: {fileID: 3917374539329858561}
   m_Layer: 5
   m_Name: TryOnBtn
   m_TagString: Untagged
@@ -232,7 +232,7 @@ MonoBehaviour:
   panelManager: {fileID: 0}
   virtualPanel: {fileID: 0}
   webCamObject: {fileID: 0}
---- !u!114 &7526544216654418552
+--- !u!114 &3917374539329858561
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -241,12 +241,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 6983175182561784285}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a4f491d7cbe85749bbdce37845062ca, type: 3}
+  m_Script: {fileID: 11500000, guid: 5411b2e1cdae431488dafa65d3579061, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clothCopy: {fileID: 0}
-  contentTransform: {fileID: 0}
-  clothImage: {fileID: 6983175184405043757}
+  imgUrl: 
 --- !u!1 &6983175182575436667
 GameObject:
   m_ObjectHideFlags: 0
@@ -633,6 +631,7 @@ MonoBehaviour:
   clothCopy: {fileID: 0}
   contentTransform: {fileID: 0}
   clothImage: {fileID: 6983175184337853975}
+  basketCounterTextObject: {fileID: 0}
 --- !u!1 &6983175183631372242
 GameObject:
   m_ObjectHideFlags: 0
@@ -783,6 +782,7 @@ MonoBehaviour:
   clothCopy: {fileID: 0}
   contentTransform: {fileID: 0}
   clothImage: {fileID: 6983175184405043757}
+  basketCounterTextObject: {fileID: 0}
 --- !u!1 &6983175183700297124
 GameObject:
   m_ObjectHideFlags: 0
@@ -1385,19 +1385,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6983175184405043757}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PanelManager, Assembly-CSharp
-        m_MethodName: OnMaxmizeImagePanel
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!1 &6983175184422776680
 GameObject:
   m_ObjectHideFlags: 0
@@ -1491,6 +1479,7 @@ GameObject:
   - component: {fileID: 6983175184429944347}
   - component: {fileID: 6983175184429944346}
   - component: {fileID: 7242593119510125527}
+  - component: {fileID: 8488162419597146063}
   m_Layer: 5
   m_Name: TryOnBtn
   m_TagString: Untagged
@@ -1629,6 +1618,19 @@ MonoBehaviour:
   panelManager: {fileID: 0}
   virtualPanel: {fileID: 0}
   webCamObject: {fileID: 0}
+--- !u!114 &8488162419597146063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6983175184429944343}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5411b2e1cdae431488dafa65d3579061, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  imgUrl: 
 --- !u!1 &6983175184510857209
 GameObject:
   m_ObjectHideFlags: 0

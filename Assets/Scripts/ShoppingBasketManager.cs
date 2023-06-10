@@ -8,15 +8,15 @@ public class ShoppingBasketManager : MonoBehaviour
     public GameObject clothCopy; //UI prefab
     public Transform contentTransform;  // Parent Ojbect current => Content
     public Image clothImage;
+    public GameObject basketCounterTextObject;
 
     // Start is called before the first frame update
     void Start()
     {
-        // content serach 
+        basketCounterTextObject = GameObject.Find("BasketCounterText");
         GameObject shoppingBasketPanel = GameObject.Find("ShoppingBasketPanel");
-        //Debug.Log(shoppingBasketPanel.name);
 
-        // 계층 구조 내에서 Content 오브젝트를 찾고 해당 Transform을 contentTransform에 할당합니다.
+        // Hierachy에서 Content 오브젝트를 찾고 해당 Transform을 contentTransform에 할당
         Transform content = shoppingBasketPanel.transform.Find("Scroll View/Viewport/Content");
         if (content != null)
         {
@@ -27,6 +27,10 @@ public class ShoppingBasketManager : MonoBehaviour
     {
         string objectName = clothImage.name;
         InstantiateToShoppingBasket(objectName);
+        basketCounterTextObject.GetComponent<BasketCounter>().basketCount++; // basketCounter
+        basketCounterTextObject.GetComponent<Text>().text = basketCounterTextObject.GetComponent<BasketCounter>().basketCount.ToString();
+
+        // check button
     }
     void InstantiateToShoppingBasket(string objectName)
     {
@@ -70,9 +74,19 @@ public class ShoppingBasketManager : MonoBehaviour
         closeButtonButton.onClick.AddListener(() =>
         {
             Destroy(closeButton.transform.parent.gameObject);
+            basketCounterTextObject.GetComponent<BasketCounter>().basketCount--;
+            basketCounterTextObject.GetComponent<Text>().text = basketCounterTextObject.GetComponent<BasketCounter>().basketCount.ToString();
         });
 
         uiObject.transform.SetAsFirstSibling(); // 이미지 위로 닫기 버튼이 표시되도록 설정
         uiObject.transform.localPosition = Vector3.zero;
     }
+    void ButtonInstant(){
+
+    }
+    void ButtonFuctionImplement(){
+        
+    }
+
+
 }

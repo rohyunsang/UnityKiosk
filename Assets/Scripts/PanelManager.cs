@@ -15,8 +15,9 @@ public class PanelManager : MonoBehaviour
     public GameObject SettingPanel;
     public GameObject ShoppingBasketPanel;
     public GameObject PhotoResultPanel;
+    public GameObject IntroPanel;
 
-    public Vector3 ShoppingBasketPanelOriginPosition;
+    private Vector3 ShoppingBasketPanelOriginPosition;
 
     public void UpShoppingBasketPanel(){
         ShoppingBasketPanelOriginPosition = ShoppingBasketPanel.transform.position;
@@ -48,6 +49,14 @@ public class PanelManager : MonoBehaviour
     {
         LoginPanel.SetActive(true);
     }
+
+    public void OnIntroPanel(){
+        IntroPanel.SetActive(true);
+    }
+    public void OffIntroPanel(){
+        IntroPanel.SetActive(false);
+    }
+
     public void OnPhotoResultPanel()
     {
         PhotoResultPanel.SetActive(true);
