@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Windows.WebCam;
+//using System.IO; // used only debug
 
 public class WebCam : MonoBehaviour
 {
@@ -22,10 +23,10 @@ public class WebCam : MonoBehaviour
     // photo capture checking Image varable
     public RawImage photoResult;
     public GameObject PhotoResultPanel;
-
     public GameObject PhotoUpload;
 
-    // Start is called before the first frame update
+    // use debug
+    // private int captureCounter = 0;
 
     void Start(){
         //webCam = GameObject.Find("WebCamManager").GetComponent<WebCam>();
@@ -49,17 +50,24 @@ public class WebCam : MonoBehaviour
     {
         Debug.Log("WebCamPlayButtonClicked");
         WebCamDevice device = WebCamTexture.devices[currentIndex];
-        camTexture = new WebCamTexture(device.name,728,1024,60);
+        camTexture = new WebCamTexture(device.name,1920,1080,30);
         display.texture = camTexture;
         camTexture.Play();
     }
     public void WebCamCapture(){
-        snap = new Texture2D(camTexture.width, camTexture.height, TextureFormat.RGBA32, false);
+        snap = new Texture2D(camTexture.width, camTexture.height, TextureFormat.RGBA64, false);
+        Debug.Log(camTexture.width);
+        Debug.Log(camTexture.height);
         snap.SetPixels(camTexture.GetPixels());
         snap.Apply(); 
-
-        //PhotoResultPanel.SetActive(true);
-        //photoResult.texture = snap;
+        /*
+        // used only debug
+        byte[] bytes = snap.EncodeToPNG();   
+        string savePath = Application.dataPath + "/WebCamCapture/snap" + captureCounter.ToString() +".png"; 
+        File.WriteAllBytes(savePath, bytes);
+        captureCounter++;
+        */
+        
     }
     public void WebCamCaptureButton() // using button  
     {
