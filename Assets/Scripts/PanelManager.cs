@@ -15,7 +15,9 @@ public class PanelManager : MonoBehaviour
     public GameObject SettingPanel;
     public GameObject ShoppingBasketPanel;
     public GameObject PhotoResultPanel;
-    public GameObject IntroPanel;
+    public GameObject InitPanel;
+
+    public GameObject PurchasePanel;
 
     private Vector3 ShoppingBasketPanelOriginPosition;
 
@@ -50,11 +52,26 @@ public class PanelManager : MonoBehaviour
         LoginPanel.SetActive(true);
     }
 
-    public void OnIntroPanel(){
-        IntroPanel.SetActive(true);
+    public void OnInitPanel(){
+        InitPanel.SetActive(true);
     }
-    public void OffIntroPanel(){
-        IntroPanel.SetActive(false);
+
+    public void OnPurchasePanel(){
+        PurchasePanel.SetActive(true);
+        OffPurchasePanel(); // 일단 구매기능이 없으니 구매를 건너뜀.
+    }
+    public void OffPurchasePanel(){  //waiting 3second
+        Invoke("PanelInitialize",3f);
+    }
+    void PanelInitialize(){ // used Invoked fuction
+        PurchasePanel.SetActive(false);
+        ShoppingBasketPanel.SetActive(false);
+        InitPanel.SetActive(true);
+        // 장바구니 초기화
+    }
+
+    public void OffInitPanel(){
+        InitPanel.SetActive(false);
     }
 
     public void OnPhotoResultPanel()
