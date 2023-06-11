@@ -18,8 +18,9 @@ public class PanelManager : MonoBehaviour
     public GameObject InitPanel;
 
     public GameObject PurchasePanel;
-
-    private Vector3 ShoppingBasketPanelOriginPosition;
+    
+    //use up down panel cuz always on shoppingbasketPanel
+    private Vector3 ShoppingBasketPanelOriginPosition; 
 
     public void UpShoppingBasketPanel(){
         ShoppingBasketPanelOriginPosition = ShoppingBasketPanel.transform.position;
@@ -68,6 +69,7 @@ public class PanelManager : MonoBehaviour
         ShoppingBasketPanel.SetActive(false);
         InitPanel.SetActive(true);
         // 장바구니 초기화
+
     }
 
     public void OffInitPanel(){
