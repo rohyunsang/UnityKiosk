@@ -71,6 +71,7 @@ public class WebCam : MonoBehaviour
     }
     public void WebCamCaptureButton() // using button  
     {
+        threeSecond = 3;  // 타이머 3초로 만들기 
         countingImage.SetActive(true);
         StartCoroutine(CountingThreeSecond());
         Invoke("WebCamCapture",3f);
@@ -89,7 +90,7 @@ public class WebCam : MonoBehaviour
 
     public void WebCamStopButton(){   // panel close fuc 
         camTexture.Stop();
-        threeSecond = 3;
+        threeSecond = 3;  // timer set 3 second
         countingImage.SetActive(false);
     }
 }

@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 using UnityEngine.UI;
 using System.IO;
 
-public class PhotoUpload : MonoBehaviour
+public class PhotoUpload : MonoBehaviour // capture image + db cloth image upload
 {
     public WebCam webCam;
     public GameObject uploadCompleteImage;
@@ -46,14 +46,17 @@ public class PhotoUpload : MonoBehaviour
             uploadCompleteImage.SetActive(true);
             // Print the response text
             Debug.Log(uploadRequest.downloadHandler.text);
+            Invoke("DeleteUploadCompleteImage",5f); // 5초후 이미지 업로드 완료 이미지 Off
         }
         else
         {
             // Request failed
             Debug.Log("Image upload failed: " + uploadRequest.error);
         }
+    }
 
-        
+    void DeleteUploadCompleteImage(){
+        uploadCompleteImage.SetActive(false);
     }
 }
 

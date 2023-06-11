@@ -45,9 +45,11 @@ public class UIPrefabManager : MonoBehaviour // Cloth Product PrefabManager
             {
                 for (int i = 0; i < 2; i++)
                 {
-                    uiObject.name = "ClothesPreSet" + ((idx-1)/2).ToString();  //naming
+                     //naming
+                    uiObject.name = "ClothesPreSet" + ((idx-1)/2).ToString(); 
                     leftImage.name = "LeftImage" + ((idx-1)/2).ToString();
                     rightImage.name = "RightImage" + ((idx-1)/2).ToString();
+                    
                     string clothImageURL = "http://220.149.231.136:8051/" + clothesManager.clothes[idx].imgUrl;
                     
 
