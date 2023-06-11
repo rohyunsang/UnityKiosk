@@ -11,13 +11,13 @@ public class PanelManager : MonoBehaviour
     public GameObject VirtualFittingPanel;
     public GameObject VirtualFittingResultPanel;
     public GameObject MaxmizeImagePanel;
-    //public GameObject IntroAdvertisingPanel;
     public GameObject SettingPanel;
     public GameObject ShoppingBasketPanel;
     public GameObject PhotoResultPanel;
     public GameObject InitPanel;
 
     public GameObject PurchasePanel;
+    
     
     //use up down panel cuz always on shoppingbasketPanel
     private Vector3 ShoppingBasketPanelOriginPosition; 
