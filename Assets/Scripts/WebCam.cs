@@ -21,9 +21,7 @@ public class WebCam : MonoBehaviour
     public GameObject countingImage;
 
     // photo capture checking Image varable
-    public RawImage photoResult;
-    public GameObject PhotoResultPanel;
-    public GameObject PhotoUpload;
+    public Image captureImage;
 
     // use debug
     // private int captureCounter = 0;
@@ -44,6 +42,7 @@ public class WebCam : MonoBehaviour
             camTexture.Stop();
             camTexture = null;
         }
+        captureImage.gameObject.SetActive(false);
     }
 
     public void WebCamPlayButton()
@@ -59,18 +58,14 @@ public class WebCam : MonoBehaviour
         Debug.Log(camTexture.width);
         Debug.Log(camTexture.height);
         snap.SetPixels(camTexture.GetPixels());
-        snap.Apply(); 
-        /*
-        // used only debug
-        byte[] bytes = snap.EncodeToPNG();   
-        string savePath = Application.dataPath + "/WebCamCapture/snap" + captureCounter.ToString() +".png"; 
-        File.WriteAllBytes(savePath, bytes);
-        captureCounter++;
-        */
+        snap.Apply();
+        captureImage.gameObject.SetActive(true); 
         
+        captureImage.sprite = Sprite.Create(snap, new Rect(0, 0, snap.width, snap.height), new Vector2(0.5f, 0.5f));
     }
     public void WebCamCaptureButton() // using button  
     {
+        captureImage.gameObject.SetActive(false);
         threeSecond = 3;  // 타이머 3초로 만들기 
         countingImage.SetActive(true);
         StartCoroutine(CountingThreeSecond());
@@ -88,9 +83,10 @@ public class WebCam : MonoBehaviour
         timerText.text = "Capture!";
     }
 
-    public void WebCamStopButton(){   // panel close fuc 
+    public void WebCamStopButton(){   // panel close button fuc 
+        countingImage.SetActive(false);
         camTexture.Stop();
         threeSecond = 3;  // timer set 3 second
-        countingImage.SetActive(false);
+        captureImage.gameObject.SetActive(false);
     }
 }
