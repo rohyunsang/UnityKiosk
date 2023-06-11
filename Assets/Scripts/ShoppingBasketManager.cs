@@ -10,6 +10,9 @@ public class ShoppingBasketManager : MonoBehaviour
     public Image clothImage;
     public GameObject basketCounterTextObject;
 
+    //PriceText Variable
+    public GameObject currentPriceManager;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +25,10 @@ public class ShoppingBasketManager : MonoBehaviour
         {
             contentTransform = content.transform;
         }
+
+        //PriceText
+        currentPriceManager = GameObject.Find("CurrentPriceManager");
+
     }
     public void AddToShoppingBasketButton()
     {
@@ -30,12 +37,29 @@ public class ShoppingBasketManager : MonoBehaviour
         basketCounterTextObject.GetComponent<BasketCounter>().basketCount++; // basketCounter
         basketCounterTextObject.GetComponent<Text>().text = basketCounterTextObject.GetComponent<BasketCounter>().basketCount.ToString();
 
-        // check button
+
+        // PriceText Connect
+
     }
     void InstantiateToShoppingBasket(string objectName)
     {
         clothCopy = GameObject.Find(objectName); // image 이름으로 gameObject 찾아서 복사.
         GameObject uiObject = Instantiate(clothCopy, contentTransform);
+
+        //price text
+        Text[] childTexts = clothImage.GetComponentsInChildren<Text>(true);
+        foreach (Text childText in childTexts)
+        {
+            if (childText.name == "PriceText")
+            {
+                int clothCopyPrice = int.Parse(childText.text);
+                currentPriceManager.GetComponent<CurrentPrice>().CurrnetPriceUpdate(clothCopyPrice);
+                break;
+            }
+        }
+
+
+        // remove btn
         uiObject.transform.Find("TryOnBtn").gameObject.SetActive(false);  // Try On btn, 담기 btn 비활성화
         uiObject.transform.Find("AddCartBtn").gameObject.SetActive(false);
 
@@ -44,9 +68,9 @@ public class ShoppingBasketManager : MonoBehaviour
         GameObject closeButton = new GameObject("CloseButton");
         closeButton.transform.SetParent(uiObject.transform); // 새 버튼의 부모를 contentTransform으로 설정
         RectTransform closeButtonRectTransform = closeButton.AddComponent<RectTransform>();
-        closeButtonRectTransform.anchorMin = new Vector2(1f, 1f); // 우측 상단에 위치
-        closeButtonRectTransform.anchorMax = new Vector2(1f, 1f);
-        closeButtonRectTransform.pivot = new Vector2(1f, 1f);
+        closeButtonRectTransform.anchorMin = new Vector2(1f, 0f); // 우측 상단에 위치
+        closeButtonRectTransform.anchorMax = new Vector2(1f, 0f);
+        closeButtonRectTransform.pivot = new Vector2(1f, 0f);
         closeButtonRectTransform.anchoredPosition = Vector2.zero; // 이미지 우측 상단에 위치하도록 설정
         closeButtonRectTransform.sizeDelta = new Vector2(30f, 30f); // 적절한 크기로 설정
 
@@ -73,6 +97,18 @@ public class ShoppingBasketManager : MonoBehaviour
         Button closeButtonButton = closeButton.AddComponent<Button>();
         closeButtonButton.onClick.AddListener(() =>
         {
+            //price text
+            Text[] childTexts = clothImage.GetComponentsInChildren<Text>(true);
+            foreach (Text childText in childTexts)
+            {
+                if (childText.name == "PriceText")
+                {
+                    int clothCopyPrice = (-1) * int.Parse(childText.text);
+                    currentPriceManager.GetComponent<CurrentPrice>().CurrnetPriceUpdate(clothCopyPrice);
+                    break;
+                }
+            }
+
             Destroy(closeButton.transform.parent.gameObject);
             basketCounterTextObject.GetComponent<BasketCounter>().basketCount--;
             basketCounterTextObject.GetComponent<Text>().text = basketCounterTextObject.GetComponent<BasketCounter>().basketCount.ToString();
@@ -81,12 +117,4 @@ public class ShoppingBasketManager : MonoBehaviour
         uiObject.transform.SetAsFirstSibling(); // 이미지 위로 닫기 버튼이 표시되도록 설정
         uiObject.transform.localPosition = Vector3.zero;
     }
-    void ButtonInstant(){
-
-    }
-    void ButtonFuctionImplement(){
-        
-    }
-
-
 }
