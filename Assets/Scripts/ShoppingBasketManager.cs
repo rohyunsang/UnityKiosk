@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ShoppingBasketManager : MonoBehaviour
+public class ShoppingBasketManager : MonoBehaviour  // use '담기' button
 {
     public GameObject clothCopy; //UI prefab
     public Transform contentTransform;  // Parent Ojbect current => Content
@@ -12,12 +12,15 @@ public class ShoppingBasketManager : MonoBehaviour
 
     //PriceText Variable
     public GameObject currentPriceManager;
+    GameObject shoppingBasketPanel;
+    public GameObject mainPanelObject;
 
     // Start is called before the first frame update
     void Start()
     {
         basketCounterTextObject = GameObject.Find("BasketCounterText");
-        GameObject shoppingBasketPanel = GameObject.Find("ShoppingBasketPanel");
+        shoppingBasketPanel = GameObject.Find("ShoppingBasketPanel");
+        mainPanelObject = GameObject.Find("MainPanel");
 
         // Hierachy에서 Content 오브젝트를 찾고 해당 Transform을 contentTransform에 할당
         Transform content = shoppingBasketPanel.transform.Find("Scroll View/Viewport/Content");
@@ -38,8 +41,8 @@ public class ShoppingBasketManager : MonoBehaviour
         basketCounterTextObject.GetComponent<Text>().text = basketCounterTextObject.GetComponent<BasketCounter>().basketCount.ToString();
 
 
-        // PriceText Connect
-
+        // 상품이 장바구니에 담겼습니다. 텍스트 1초간 출력
+        StartCoroutine(ShowMessageCoroutine("상품이 장바구니에 담겼습니다.", 1f));
     }
     void InstantiateToShoppingBasket(string objectName)
     {
@@ -116,5 +119,39 @@ public class ShoppingBasketManager : MonoBehaviour
 
         uiObject.transform.SetAsFirstSibling(); // 이미지 위로 닫기 버튼이 표시되도록 설정
         uiObject.transform.localPosition = Vector3.zero;
+    }
+
+
+    // 메시지를 일정 시간 동안 출력하는 코루틴 함수
+    IEnumerator ShowMessageCoroutine(string message, float duration)
+    {
+        GameObject messageObject = new GameObject("MessageText");
+        messageObject.transform.SetParent(mainPanelObject.transform); // Set the parent object to the panel's contentTransform
+        RectTransform messageRectTransform = messageObject.AddComponent<RectTransform>();
+        messageRectTransform.anchorMin = new Vector2(0.5f, 0.5f); // Set the anchor to the center
+        messageRectTransform.anchorMax = new Vector2(0.5f, 0.5f);
+        messageRectTransform.pivot = new Vector2(0.5f, 0.5f);
+        messageRectTransform.anchoredPosition = Vector2.zero; // Center the message object
+
+        Image backgroundImage = messageObject.AddComponent<Image>();
+        backgroundImage.color = new Color(0.8f, 0.8f, 0.8f, 0.8f); // Set the background color and transparency
+
+        GameObject textObject = new GameObject("Text");
+        textObject.transform.SetParent(messageObject.transform); // Set the parent to the message object
+        RectTransform textRectTransform = textObject.AddComponent<RectTransform>();
+        textRectTransform.anchorMin = new Vector2(0.5f, 0.5f); // Set the anchor to the center
+        textRectTransform.anchorMax = new Vector2(0.5f, 0.5f);
+        textRectTransform.pivot = new Vector2(0.5f, 0.5f);
+        textRectTransform.anchoredPosition = Vector2.zero; // Center the text object
+
+        Text messageText = textObject.AddComponent<Text>();
+        messageText.text = message;
+        messageText.font = Font.CreateDynamicFontFromOSFont("Arial", 14);
+        messageText.alignment = TextAnchor.MiddleCenter;
+        messageText.color = Color.black;
+
+        yield return new WaitForSeconds(duration);
+
+        Destroy(messageObject);
     }
 }
