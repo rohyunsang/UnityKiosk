@@ -11,7 +11,8 @@ public class PhotoUpload : MonoBehaviour // capture image + db cloth image uploa
     public GameObject uploadCompleteImage;
     public string imgUrl;
 
-    void Start(){
+    void Start()
+    {
         // another GameObject's field access 
         webCam = GameObject.Find("WebCamManager").GetComponent<WebCam>();
     }
@@ -24,8 +25,11 @@ public class PhotoUpload : MonoBehaviour // capture image + db cloth image uploa
 
     IEnumerator PhotoCapture()
     {
-        byte[] imageBytes = webCam.snap.EncodeToJPG();
+        byte[] imageBytes = webCam.snapSliced.EncodeToJPG();
 
+        //use debug
+        string localPath = Application.persistentDataPath + "/customer_image.jpg";
+        File.WriteAllBytes(localPath, imageBytes);
         // Create a new form
         WWWForm form = new WWWForm();
 
@@ -46,7 +50,7 @@ public class PhotoUpload : MonoBehaviour // capture image + db cloth image uploa
             uploadCompleteImage.SetActive(true);
             // Print the response text
             Debug.Log(uploadRequest.downloadHandler.text);
-            Invoke("DeleteUploadCompleteImage",5f); // 5초후 이미지 업로드 완료 이미지 Off
+            Invoke("DeleteUploadCompleteImage", 5f); // 5초후 이미지 업로드 완료 이미지 Off
         }
         else
         {
@@ -55,7 +59,8 @@ public class PhotoUpload : MonoBehaviour // capture image + db cloth image uploa
         }
     }
 
-    void DeleteUploadCompleteImage(){
+    void DeleteUploadCompleteImage()
+    {
         uploadCompleteImage.SetActive(false);
     }
 }
